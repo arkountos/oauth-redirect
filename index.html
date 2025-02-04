@@ -2,7 +2,19 @@
 <html>
 <head>
 <script>
-window.location = "antevresto://oauth-success";
+// window.location = "antevresto://oauth-success";
+const queryString = window.location.search;
+
+// Step 2: Create a URLSearchParams object
+const urlParams = new URLSearchParams(queryString);
+
+// Step 3: Extract the 'code' and 'state' parameters
+const code = urlParams.get('code');
+const state = urlParams.get('state');
+
+// Optional: Log the values to the console for verification
+console.log('Authorization Code:', code);
+console.log('State:', state);
 </script>
 </head>
 </html> 

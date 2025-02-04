@@ -4,10 +4,10 @@
 <script>
 // window.location = "antevresto://oauth-success";
 const queryString = window.location.search;
-
+console.log('queryString: ', queryString);
 // Step 2: Create a URLSearchParams object
 const urlParams = new URLSearchParams(queryString);
-
+console.log('urlParams:', urlParams);
 // Step 3: Extract the 'code' and 'state' parameters
 const code = urlParams.get('code');
 const state = urlParams.get('state');

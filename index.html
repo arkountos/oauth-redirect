@@ -2,23 +2,30 @@
 <html>
 <head>
 <script>
+    console.log('Full URL:', fullUrl);
+    console.log('Authorization Code:', code);
+    console.log('State:', state);
 
-const queryString = window.location.search;
-console.log('queryString: ', queryString);
-// Step 2: Create a URLSearchParams object
-const urlParams = new URLSearchParams(queryString);
-console.log('urlParams:', urlParams);
-// Step 3: Extract the 'code' and 'state' parameters
-const code = urlParams.get('code');
-const state = urlParams.get('state');
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the full URL
+        const fullUrl = window.location.href;
 
-// Optional: Log the values to the console for verification
-console.log('Authorization Code:', code);
-console.log('State:', state);
-// window.location = "antevresto://oauth-success";
-</script>
-</head>
+        // Extract query parameters
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const code = urlParams.get('code');
+        const state = urlParams.get('state');
+
+        console.log('Full URL:', fullUrl);
+        console.log('Authorization Code:', code);
+        console.log('State:', state);
+
+        // Display the full URL on the page
+        document.getElementById("message").textContent = "Hello! OAuth process is in progress.";
+        document.getElementById("fullUrl").textContent = "Redirected from: " + fullUrl;
+    });
+</script></head>
 <body>
-  <h1 id="message">Hello!</h1>
+  <h1 id="message">Hello 2!</h1>
 </body>
 </html> 
